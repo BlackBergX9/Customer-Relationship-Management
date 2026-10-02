@@ -1,4 +1,4 @@
-package org.blackbergx9.customerhandler;
+package org.blackbergx9.customerhandler.repository;
 
 public interface Repository<T, ID> {
 
