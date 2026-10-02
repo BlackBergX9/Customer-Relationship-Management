@@ -1,5 +1,6 @@
 package org.blackbergx9.customerhandler;
 
+import org.blackbergx9.customerhandler.repository.Repository;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,7 @@ public class CustomerController {
         this.messageSource = messageSource;
     }
 
+
     @GetMapping("/hi")
     public String hi() {
         return crmProperties.welcomeMessage()+" "+crmProperties.maxResults();
@@ -37,9 +39,9 @@ public class CustomerController {
         return messageSource.getMessage("welcome.message", new Object[]{name}, locale);
     }
 
+
     @GetMapping
     public Iterable<Customer> getAllCustomers() {
-
 
         return repository.findAll();
     }
